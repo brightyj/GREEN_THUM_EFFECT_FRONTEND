@@ -1,0 +1,92 @@
+.hero {
+  height: 100vh;
+  background: linear-gradient(180deg, #fde1ff, #e1ffe2 60%);
+  display: flex;
+
+}
+
+.hero-left {
+  flex: 1;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  gap: 20px;
+  padding-left: 180px;
+  line-height: 1.1;
+}
+
+.hero-left h2 {
+  color: #090909;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.hero-left p {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.hero-hand-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-latest-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 310px;
+  height: 70px;
+  border-radius: 75px;
+  margin-top: 30px;
+  background: #ff4141;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.hero-right {
+  margin:0,auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:50%;
+  width:80%;
+  
+ 
+}
+.hero-right img
+{
+  margin-top: auto;
+  padding:5rem;
+  height:120%;
+  width:300%;
+  display: grid;
+  place-items:center;
+
+}
+/* 
+.slider-container {
+  width: 80%;
+  margin: 0 auto;
+  height :80%
+}
+
+.collections img {
+  width: 100%;
+  height: auto;
+}
+
+.collections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+ */
