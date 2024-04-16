@@ -18,7 +18,7 @@ const login = async () => {
   console.log("Login Function Executed", formData);
 
   try {
-      const response = await fetch('https://green-thumb-effect-frontend-7mxw.onrender.com/login', {
+      const response = await fetch('https://green-thumb-effect-backend.onrender.com/login', {
           method: 'POST',
           headers: {
               'Accept': 'application/json',
@@ -47,7 +47,7 @@ const login = async () => {
 const signup = async () => {
   console.log("Signup changes Executed", formData);
   try {
-      const response = await fetch('http://localhost:4000/signup', {
+      const response = await fetch('https://green-thumb-effect-backend.onrender.com/signup', {
           method: 'POST',
           headers: {
               'Accept': 'application/json',
