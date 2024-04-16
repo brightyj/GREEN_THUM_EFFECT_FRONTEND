@@ -11,89 +11,87 @@ const getDefaultCart = () => {
 };
 
 const ShopContextProvider = (props) => {
-  const [allProducts, setAllProducts] = useState([]);
+  const [all_product, setAll_Product] = useState([]); // Define all_product state variable
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
     fetch('https://green-thumb-effect-backend.onrender.com/allproducts')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch products');
-        }
-        return response.json();
-      })
-      .then((data) => setAllProducts(data))
+      .then((response) => response.json())
+      .then((data) => setAll_Product(data))
       .catch((error) => console.error("Error fetching products: ", error));
-
-    if (localStorage.getItem('auth-token')) {
-      fetch('https://green-thumb-effect-backend.onrender.com/getcart', {
-        method: 'POST',
-        headers: {
-          'auth-token': localStorage.getItem('auth-token'),
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch cart');
-          }
-          return response.json();
-        })
-        .then((data) => setCartItems(data))
-        .catch((error) => console.error("Error fetching cart: ", error));
+  
+if(localStorage.getItem('auth-token')){
+  fetch('https://green-thumb-effect-backend.onrender.com/getcart',{
+    method:'POST',
+    headers:{
+      Accept:'application/form-data',
+      'auth-token':`${localStorage.getItem('auth-token')}`,
+  'Content-Type':'application/json',
+  },
+  body:"",
+}).then((response)=>response.json())
+.then((data)=>setCartItems(data));
     }
-  }, []);
+
+},[])
+ 
 
   const addToCart = (itemId) => {
-    if (!localStorage.getItem('auth-token')) {
+    if(!localStorage.getItem('auth-token')){
       alert("Please Login");
       return;
     }
     console.log(itemId); 
-    const J = JSON.stringify({ "itemid": itemId });
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    const J=JSON.stringify({ "itemid": itemId });
+   setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     if (localStorage.getItem('auth-token')) {
-      fetch('https://green-thumb-effect-backend.onrender.com/addtocart', {
-        method: 'POST',
-        headers: {
-          'auth-token': localStorage.getItem('auth-token'),
-          'Content-Type': 'application/json',
-        },
-        body: J
-      })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to add item to cart');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Item added to cart:", data);
-      })
-      .catch((error) => {
-        console.error("Error adding item to cart: ", error);
-      });
+        fetch('https://green-thumb-effect-backend.onrender.com/addtocart', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/form-data',
+                'auth-token': `${localStorage.getItem('auth-token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: J
+        })
+        .then((response) => {
+            // Log the response for debugging
+            console.log("Server response:", response);
+            
+            // Check if response is successful
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            
+            // Parse response as JSON
+            return response.json();
+        })
+        .then((data) => {
+            // Log the parsed data
+            console.log("Parsed response data:", data);
+        })
+        .catch((error) => {
+            // Handle and log any errors
+            console.error("Error adding to cart: ", error);
+        });
     }
-  };
+};
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-    if(localStorage.getItem('auth-token')) {
+    if(localStorage.getItem('auth-token')){
       fetch('https://green-thumb-effect-backend.onrender.com/removefromcart', {
-        method: 'POST',
-        headers: {
-          'auth-token': localStorage.getItem('auth-token'),
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ "itemid": itemId }),
-      })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to remove item from cart');
-        }
-        return response.json();
-      })
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error removing from cart: ", error));
+          method: 'POST',
+          headers: {
+            Accept: 'application/form-data',
+            'auth-token': `${localStorage.getItem('auth-token')}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ "itemid": itemId }),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error removing from cart: ", error));
     }
   };
 
@@ -101,7 +99,7 @@ const ShopContextProvider = (props) => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        let itemInfo = allProducts.find((product) => product.id === Number(item));
+        let itemInfo = all_product.find((product) => product.id === Number(item));
         totalAmount += itemInfo.new_price * cartItems[item];
       }
     }
@@ -121,7 +119,7 @@ const ShopContextProvider = (props) => {
   const contextValue = {
     getTotalCartAmount,
     getTotalCartItems,
-    allProducts,
+    all_product,
     cartItems,
     addToCart,
     removeFromCart,
