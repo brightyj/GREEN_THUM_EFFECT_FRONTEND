@@ -34,6 +34,7 @@ const ShopCategory = (props) => {
         ) : (
           <p>No products available</p>
         )}
+        console.log(item.image)
       </div>
       <div className="shopcategory-loadmore">
         <Link to="/" style={{ textDecoration: 'none' }}>Explore More</Link>
