@@ -56,7 +56,10 @@ const CartItems = () => {
               <h3>Rs {getTotalCartAmount().toFixed(2)}</h3> {/* Format total as currency */}
             </div>
           </div>
-          <button onClick={() => console.log("Proceed to checkout")}>PROCEED TO CHECKOUT</button> 
+          <button onClick={() => console.log("Proceed to checkout")} className="proceed-to-checkout-button">
+  PROCEED TO CHECKOUT
+</button>
+
         </div>
       </div>
     </div>
