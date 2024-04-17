@@ -3,6 +3,7 @@ import Breadcrums from '../Components/Breadcrums/Breadcrums'
 import ProductDisplay from '../Components/ProductDisplay/ProductDisplay'
 import DescriptionBox from '../Components/DescriptionBox/DescriptionBox'
 import RelatedProducts from '../Components/RelatedProducts/RelatedProducts'
+import './CSS/Product.css'
  
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
