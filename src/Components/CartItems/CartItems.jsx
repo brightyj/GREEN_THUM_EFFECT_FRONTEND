@@ -60,6 +60,7 @@ const CartItems = () => {
   PROCEED TO CHECKOUT
 </button>
 
+
         </div>
       </div>
     </div>
