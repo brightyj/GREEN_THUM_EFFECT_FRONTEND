@@ -2,63 +2,69 @@
 
 /* Styles for the Product component container */
 .product-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Styles for the breadcrumbs */
-  .breadcrumbs {
-    margin-bottom: 20px;
-    /* Add additional styles as needed */
-  }
-  
-  /* Styles for the product display section */
-  .product-display {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    /* Add additional styles as needed */
-  }
-  
-  /* Styles for the product image */
-  .product-image {
-    flex: 0 0 40%; /* Adjust width as needed */
-  }
-  
-  .product-image img {
-    width: 100%;
-    height: auto;
-    /* Add additional styles as needed */
-  }
-  
-  /* Styles for the product information */
-  .product-info {
-    flex: 0 0 55%; /* Adjust width as needed */
-    padding-left: 20px;
-    /* Add additional styles as needed */
-  }
-  
-  .product-info h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    /* Add additional styles as needed */
-  }
-  
-  .product-info p {
-    margin-bottom: 10px;
-    /* Add additional styles as needed */
-  }
-  
-  /* Styles for the description box */
-  .description-box {
-    margin-bottom: 20px;
-    /* Add additional styles as needed */
-  }
-  
-  /* Styles for the related products section */
-  .related-products {
-    /* Add styles for the related products section */
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for the breadcrumbs */
+.breadcrumbs {
+  margin-bottom: 20px;
+  /* Add additional styles as needed */
+}
+
+/* Styles for the product display section */
+.product-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  /* Add additional styles as needed */
+}
+
+/* Styles for the product image */
+.product-image {
+  flex: 0 0 40%; /* Adjust width as needed */
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  /* Add additional styles as needed */
+}
+
+/* Styles for the product information */
+.product-info {
+  flex: 0 0 55%; /* Adjust width as needed */
+  padding-left: 20px;
+  /* Add additional styles as needed */
+}
+
+.product-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  /* Add additional styles as needed */
+}
+
+.product-info p {
+  margin-bottom: 10px;
+  /* Add additional styles as needed */
+}
+
+/* Styles for the description box */
+.description-box {
+  margin-bottom: 20px;
+  /* Add additional styles as needed */
+}
+
+/* Styles for the related products section */
+.related-products {
+  /* Add styles for the related products section */
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+.product-container {
+  padding: 10px; /* Reduce padding for smaller screens */
+}
+}
