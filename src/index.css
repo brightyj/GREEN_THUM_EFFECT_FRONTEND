@@ -12,3 +12,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@media (max-width: 768px) {
+  .shopcategory-banner,
+  .shopcategory-indexSort {
+    width: 90%;
+  }
+  .shopcategory-sort {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .shopcategory-indexSort p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopcategory-banner,
+  .shopcategory-indexSort {
+    width: 100%;
+  }
+  .shopcategory-products {
+    grid-template-columns: 1fr;
+  }
+  .shopcategory-loadmore {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
