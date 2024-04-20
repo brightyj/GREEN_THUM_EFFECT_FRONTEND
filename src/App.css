@@ -38,13 +38,4 @@
   }
 }
 
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-  .App-header {
-    padding: 20px; /* Adjust padding for smaller screens */
-  }
 
-  .App-logo {
-    height: 20vmin; /* Reduce logo size for smaller screens */
-  }
-}
