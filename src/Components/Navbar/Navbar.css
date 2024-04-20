@@ -1,4 +1,3 @@
-/* Default styles for navbar */
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -162,6 +161,17 @@
     .nav-login-cart {
         gap: 10px;
     }
+
+    /* Additional styles for smaller smartphones */
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+    }
+
+    .nav-menu li {
+        margin: 8px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -209,11 +219,5 @@
         width: 110px;
         height: 40px;
         font-size: 14px;
-    }
-
-    .nav-cart-count {
-        margin-top: -25px;
-        margin-left: -40px;
-        font-size: 10px;
     }
 }
