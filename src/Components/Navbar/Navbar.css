@@ -1,38 +1,38 @@
 .nav-menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 5vw; /* Using viewport width units for responsive gap */
-  color: #626262;
-  font-size: 2vw; /* Using viewport width units for responsive font size */
-  font-weight: 500;
-  position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 5vw; /* Using viewport width units for responsive gap */
+    color: #626262;
+    font-size: 2vw; /* Using viewport width units for responsive font size */
+    font-weight: 500;
+    position: relative;
 }
 
 .nav-menu li {
-  position: relative;
-  cursor: pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 .nav-menu li a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-menu li a:hover {
-  color: #555;
+    color: #555;
 }
 
 .nav-menu hr {
-  border: none;
-  width: 80%;
-  height: 0.3vw; /* Using viewport width units for responsive height */
-  border-radius: 10px;
-  background: #ff4141;
-  position: absolute;
-  bottom: -0.5vw; /* Using viewport width units for responsive positioning */
-  left: 50%;
-  transform: translateX(-50%);
+    border: none;
+    width: 80%;
+    height: 0.3vw; /* Using viewport width units for responsive height */
+    border-radius: 10px;
+    background: #ff4141;
+    position: absolute;
+    bottom: -0.5vw; /* Using viewport width units for responsive positioning */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* No media queries needed for different screen sizes */
