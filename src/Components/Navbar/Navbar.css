@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Adjusted */
   align-items: center;
   padding: 16px;
   box-shadow: 0 1px 3px -2px black;
@@ -26,11 +26,11 @@
   color: #626262;
   font-size: 20px;
   font-weight: 500;
-  position: relative; /* Added */
+  position: relative;
 }
 
 .nav-menu li {
-  position: relative; /* Added */
+  position: relative;
   cursor: pointer;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .nav-menu li a:hover {
-  color: #555; /* Add your desired hover text color */
+  color: #555;
 }
 
 .nav-menu hr {
@@ -49,16 +49,16 @@
   height: 3px;
   border-radius: 10px;
   background: #ff4141;
-  position: absolute; /* Added */
-  bottom: -5px; /* Added */
-  left: 50%; /* Added */
-  transform: translateX(-50%); /* Added */
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 20px; /* Adjusted */
 }
 
 .nav-login-cart button {
@@ -125,14 +125,14 @@
 
   .nav-menu {
     display: none;
-    flex-direction: column; /* Changed */
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%; /* Added */
-    background-color: #fff; /* Added */
-    padding: 10px; /* Added */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added */
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .nav-menu.visible {
