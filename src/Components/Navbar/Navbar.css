@@ -2,37 +2,65 @@
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 5vw; /* Using viewport width units for responsive gap */
+    gap: 50px;
     color: #626262;
-    font-size: 2vw; /* Using viewport width units for responsive font size */
+    font-size: 20px;
     font-weight: 500;
-    position: relative;
-}
-
-.nav-menu li {
-    position: relative;
+    position: relative; /* Added */
+  }
+  
+  .nav-menu li {
+    position: relative; /* Added */
     cursor: pointer;
-}
-
-.nav-menu li a {
+  }
+  
+  .nav-menu li a {
     text-decoration: none;
     color: inherit;
-}
-
-.nav-menu li a:hover {
-    color: #555;
-}
-
-.nav-menu hr {
+  }
+  
+  .nav-menu li a:hover {
+    color: #555; /* Add your desired hover text color */
+  }
+  
+  .nav-menu hr {
     border: none;
     width: 80%;
-    height: 0.3vw; /* Using viewport width units for responsive height */
+    height: 3px;
     border-radius: 10px;
     background: #ff4141;
-    position: absolute;
-    bottom: -0.5vw; /* Using viewport width units for responsive positioning */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* No media queries needed for different screen sizes */
+    position: absolute; /* Added */
+    bottom: -5px; /* Added */
+    left: 50%; /* Added */
+    transform: translateX(-50%); /* Added */
+  }
+  
+  /* Media queries for different screen sizes */
+  
+  @media (max-width: 750px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column; /* Changed */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%; /* Added */
+      background-color: #fff; /* Added */
+      padding: 10px; /* Added */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added */
+    }
+  
+    .nav-menu.visible {
+      display: flex;
+    }
+  
+    .nav-menu li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-menu hr {
+      display: none;
+    }
+  }
+  
