@@ -1,44 +1,72 @@
 /* Popular component container */
 .popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Increase the gap for better spacing */
     max-width: 1280px;
     margin: auto;
-    padding: 20px;
-    text-align: center; /* Center-align content */
+    padding: 20px; /* Add padding for better spacing */
   }
   
   /* Heading */
   .popular h1 {
     color: #171717;
-    font-size: 2.5rem; /* Using rem units for scalability */
+    font-size: 2.5rem; /* Use rem units for scalability */
     font-weight: 600;
-    margin-bottom: 20px; /* Increase spacing between heading and items */
+    margin: 0; /* Reset margin to remove default spacing */
   }
   
   /* Horizontal rule */
   .popular hr {
     width: 150px;
     height: 4px;
-    border: none; /* Remove default border */
+    border-radius: 10px;
     background: #252525;
-    margin-bottom: 40px; /* Increase spacing between HR and items */
+    margin: 20px 0; /* Add margin top and bottom for spacing */
   }
   
   /* Popular items container */
   .popular-item {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 25px;
+    justify-content: center;
   }
   
-  /* Media query for smaller screens */
+  /* Media queries for different screen sizes */
+  @media (max-width: 1280px) {
+    .popular {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .popular h1 {
+      font-size: 2.25rem; /* Reduce font size for medium screens */
+    }
+  }
+  
   @media (max-width: 800px) {
     .popular h1 {
       font-size: 2rem; /* Reduce font size for smaller screens */
     }
     .popular hr {
       width: 80px;
-      height: 3px; /* Adjust HR height */
     }
   }
+  
+  @media (max-width: 600px) {
+    .popular hr {
+      width: 60px; /* Adjust HR width for extra small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .popular hr {
+      width: 50px; /* Further adjust HR width for extra small screens */
+    }
+  }
+
   
